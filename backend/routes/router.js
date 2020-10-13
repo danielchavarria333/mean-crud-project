@@ -7,6 +7,8 @@ router.get('/' , Controller.getEmpleados);
 
 router.post('/' , Controller.addEmpleados);
 
+router.delete('/:id' , Controller.deleteEmpleado);
+
 
 
 

@@ -11,7 +11,12 @@ controller.addEmpleados = async (req , res) => {
     Empleados.insertMany(req.body)
         .then(msg => res.json({status: "Empleado agregado exitosamente"}))
         .catch(err => res.json(err))
-    console.log(req.body);
+    
+};
+
+controller.deleteEmpleado = async (req , res) => {
+    await Empleados.findOneAndRemove({_id: req.params.id});
+    res.json({status:"Empleado fue eliminado"});
 };
 
 
